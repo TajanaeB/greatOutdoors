@@ -1,1 +1,60 @@
 <p>add-product works!</p>
+
+
+
+<p>Product master will add product to database</p>
+
+
+<form #myForm="ngForm" (ngSubmit)="processForm(myForm)" >
+
+    <div class="FormGroup">
+
+        <label for="productname">Name</label>
+        <input #fNameTemp="ngModel" type="text" name="productname" class="form-control" [(ngModel)]= "ProductData.name">
+        
+    </div>
+
+
+    <div class="FormGroup">
+
+        <label for="price">Price</label>
+        <input type="number" name="Price" class="form-control" [(ngModel)]= "ProductData.price">
+
+    </div>
+
+
+    <div class="FormGroup">
+
+        <label for="proddescription">Description</label>
+        <input type="text" name="proddescription" class="form-control" [(ngModel)]= "ProductData.description">
+
+    </div>
+
+
+    <div class="FormGroup">
+
+        <label for="productid">Product ID</label>
+        <input type="number" name="productid" class="form-control" [(ngModel)]= "ProductData.id">
+
+    </div>
+
+
+    <div class="FormGroup">
+
+        <label for="prodquantity">Quantity</label>
+        <input type="number" name="prodquantity" class="form-control" [(ngModel)]= "ProductData.quantity">
+
+    </div>
+
+
+    <div class="FormGroup">
+
+        <label for="imageUri">Image Uri</label>
+        <input type="text" name="imageUri" class="form-control" [(ngModel)]= "ProductData.imageUri">
+
+    </div>
+
+    <button type="submit" (click)="addProduct()"> Add Product </button>
+
+
+</form>
