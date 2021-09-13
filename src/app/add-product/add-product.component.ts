@@ -17,6 +17,8 @@ export class AddProductComponent implements OnInit {
 
   postUrl = "http://localhost:8080/Product/addProduct";
   geturl = "http://localhost:8080/Product/";
+  deleteUrl = "http://localhost:8080/Product/deleteProduct/";
+  putUrl = "http://localhost:8080/Product/updateProduct/";
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -48,5 +50,26 @@ export class AddProductComponent implements OnInit {
         this.returnData = res;
       });
     }
+
   }
+
+
+  removeProduct(){
+    this.http.delete(this.deleteUrl+ this.product.id).subscribe();
+  }
+
+
+  updateProduct(){
+
+    var update: any = {
+      "name": this.product.name,
+      "price": this.product.price,
+      "description": this.product.description,
+      "id": this.product.id,
+      "quantity": this.product.quantity,
+      "imageUri": this.product.imageUri
+  }
+  
+  this.http.put(this.putUrl, update).subscribe();
+}
 }

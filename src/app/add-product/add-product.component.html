@@ -56,7 +56,8 @@
 
     <button type="submit" (click)="addProduct()"> Add Product </button>
     <button type="submit" (click)="fetchProduct()"> Get Product </button>
-
+    <button type="submit" (click)="updateProduct()"> Update Product </button>
+    <button type="submit" (click)="removeProduct()"> Delete Product </button>
     <ul>
         <li  *ngFor="let data of returnData" style="list-style: none;">{{data.name}}</li>
     </ul>
