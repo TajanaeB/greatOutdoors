@@ -1,10 +1,5 @@
-<p>add-product works!</p>
 
-
-
-<p>Product master will add product to database</p>
-
-
+<div class="container">
 <form #myForm="ngForm" >
 
     <div class="FormGroup">
@@ -49,8 +44,8 @@
 
     <div class="FormGroup">
 
-        <label for="imageUri">Image Uri</label>
-        <input type="text" name="imageUri" class="form-control" [(ngModel)]= "product.imageUri">
+        <label for="imageUri">Image Url</label>
+        <input type="text" name="imageUrl" class="form-control" [(ngModel)]= "product.imageUrl">
 
     </div>
 
@@ -62,3 +57,4 @@
         <li  *ngFor="let data of returnData" style="list-style: none;">{{data.name}}</li>
     </ul>
 </form>
+</div>

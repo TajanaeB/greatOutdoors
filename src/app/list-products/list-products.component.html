@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="border">
+        <button class="btn btn-md btn-outline-primary"><i class="fa fa-plus">Add Product</i> </button>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productsData">
+                <td><span>{{product.id}}</span></td>
+                <td><span>{{product.name}}</span></td>
+                <td><span>{{product.description}}</span></td>
+                <td><span>{{product.imageUrl}}</span></td>
+                <td><span>{{product.price}}</span></td>
+                <td><span>{{product.category}}</span></td>
+                <td><span>{{product.quantity}}</span></td>
+                <td>
+                    <button class="btn btn-sm btn-warning" (click)="editProduct(product.id)">
+                        <i class="fa fa-edit" >Edit</i>
+                    </button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.id)">
+                        <i class="fa fa-remove">Delete</i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
