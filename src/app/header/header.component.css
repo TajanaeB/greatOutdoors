@@ -1,3 +1,13 @@
-.sign-in {
-    float: right;
+.nav {
+    justify-content: center;
+    background-color: forestgreen;
+    color: black;
+}
+
+.header-link{
+    color: black;
+}
+
+.logo {
+    border-radius: 50%;
 }
