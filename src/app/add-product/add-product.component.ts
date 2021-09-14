@@ -17,7 +17,7 @@ export class AddProductComponent implements OnInit {
 
   postUrl = "http://localhost:8080/Product/addProduct";
   geturl = "http://localhost:8080/Product/";
-  deleteUrl = "http://localhost:8080/Product/deleteProduct/";
+  deleteUrl = "http://localhost:8080/Product/delete/";
   putUrl = "http://localhost:8080/Product/updateProduct/";
   constructor(private http: HttpClient) { }
 
