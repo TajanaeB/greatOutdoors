@@ -1,0 +1,19 @@
+
+
+.productForm {
+    background-color: rgb(16, 148, 16);
+    font-weight: bold;
+    font-size: medium;
+    height: 200px;
+    width: 50%;
+    padding: 20px 10px 100px;
+    margin: 10px;
+    border: 4px solid black;
+
+}
+
+.button {
+    padding: 8px;
+    border: 2px solid black;
+    margin: 4px;
+}
