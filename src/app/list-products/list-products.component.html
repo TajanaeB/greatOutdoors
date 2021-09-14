@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of productsData; trackBy: trackItem">
+            <tr *ngFor="let product of productsData; trackBy: trackElement">
                 <td><span>{{product.id}}</span></td>
                 <td><span>{{product.name}}</span></td>
                 <td><span>{{product.description}}</span></td>
