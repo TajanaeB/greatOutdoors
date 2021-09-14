@@ -4,8 +4,8 @@
 
 <p>Product master will add product to database</p>
 
-
-<form #myForm="ngForm"class="productForm">
+<div class="productForm">
+<form #myForm="ngForm">
 
     <div class="FormGroup">
 
@@ -68,3 +68,5 @@
         <li  *ngFor="let data of returnData" style="list-style: none;">{{data.name}}</li>
     </ul>
 </form>
+
+</div>
