@@ -31,10 +31,10 @@ export class AddProductComponent implements OnInit {
       "name": this.product.name,
       "price": this.product.price,
       "description": this.product.description,
-      "id": this.product.id,
       "quantity": this.product.quantity,
       "imageUri": this.product.imageUrl,
-      "category":this.product.category
+      "category":this.product.category,
+      "id":""
     }
 
     this.http.post(this.postUrl, add).subscribe();
