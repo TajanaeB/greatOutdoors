@@ -1,0 +1,14 @@
+.side-menu{
+
+    color: forestgreen;
+    float: left;
+    border: 4px dotted forestgreen;
+    background-color: black;
+    padding: 15px;
+    flex-direction: column;
+    width: 20%;
+    border-radius: 15%;
+
+
+}
+
