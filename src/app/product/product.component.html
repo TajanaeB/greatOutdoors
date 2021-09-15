@@ -1,1 +1,21 @@
-<p>product works!</p>
+<div class="border">
+    <span *ngIf="listProductView">
+        <button class="btn btn-md btn-outline-primary"><i class="fa fa-plus" (click)="addProductClicked()" >Add Product</i> </button>
+    </span>
+    <span *ngIf="addProductView">
+        <button class="btn btn-md btn-outline-primary"><i class="fa fa-plus" (click)="showListProduct()">Show Product List</i> </button>
+    </span>
+
+    
+</div>
+
+<div class="container" *ngIf="addProductView">
+    <app-add-product ></app-add-product>
+    
+    
+</div>
+
+<div  class="container" *ngIf="listProductView">
+        <app-list-products></app-list-products>
+        
+</div>

@@ -10,11 +10,11 @@ import { ListProductsComponent } from './list-products/list-products.component';
 
 import { HeaderComponent } from './header/header.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
-import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +24,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     ListProductsComponent,
     HeaderComponent,
     SideMenuComponent,
-    MainComponent,
     FooterComponent,
     LogInComponent,
-    SignUpComponent
+    SignUpComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

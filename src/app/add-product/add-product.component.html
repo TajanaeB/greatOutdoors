@@ -1,73 +1,33 @@
 
-
-
-
-
-
 <div class="productForm">
-<p>Product master will add product to database</p>
-
 <form #myForm="ngForm">
-
     <div class="FormGroup">
-
         <label for="productname">Name: </label>
         <input #fNameTemp="ngModel" type="text" name="productname" class="form-control" [(ngModel)]= "product.name">
-        
     </div>
-    <br>
-
-
     <div class="FormGroup">
-
         <label for="price">Price: </label>
         <input type="number" name="Price" class="form-control" [(ngModel)]= "product.price">
-
     </div>
-    <br>
-
-
     <div class="FormGroup">
-
         <label for="proddescription">Description: </label>
         <input type="text" name="proddescription" class="form-control" [(ngModel)]= "product.description">
-
     </div>
-    <br>
-
-
     <div class="FormGroup">
-
-        <label for="productid">Product ID: </label>
-        <input type="number" name="productid" class="form-control" [(ngModel)]= "product.id">
-
-    </div>
-    <br>
-
-
-    <div class="FormGroup">
-
         <label for="prodquantity">Quantity: </label>
         <input type="number" name="prodquantity" class="form-control" [(ngModel)]= "product.quantity">
-
     </div>
-    <br>
-
-
     <div class="FormGroup">
-
-
-        <label for="imageUrl">Image Uri</label>
+        <label for="imageUrl">Image Url</label>
         <input type="text" name="imageUrl" class="form-control" [(ngModel)]= "product.imageUrl">
-
-
+    </div>
+    <div class="FormGroup">
+        <label for="category">Category</label>
+        <input type="text" name="category" class="form-control" [(ngModel)]= "product.category">
     </div>
     <br>
 
     <button type="submit" (click)="addProduct()"> Add Product </button>
-    <button type="submit" class="button" (click)="fetchProduct()"> Get Product </button>
-    <button type="submit" class="button" (click)="updateProduct()"> Update Product </button>
-    <button type="submit" class="button" (click)="removeProduct()"> Delete Product </button>
     <ul>
         <li  *ngFor="let data of returnData" style="list-style: none;">{{data.name}}</li>
     </ul>

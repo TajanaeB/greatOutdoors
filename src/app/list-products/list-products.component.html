@@ -1,17 +1,12 @@
-<div class="container">
-    <div class="border">
-        <button class="btn btn-md btn-outline-primary"><i class="fa fa-plus">Add Product</i> </button>
-    </div>
-
-   
+<div class="container" *ngIf="!editProductView">
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Image</th>
                 <th>Price</th>
+                <th>Image</th>
                 <th>Category</th>
                 <th>Quantity</th>
             </tr>
@@ -36,5 +31,9 @@
             </tr>
         </tbody>
     </table>
+</div>
+
+<div class="container" *ngIf="editProductView">
+    <app-edit-product></app-edit-product>
 </div>
 

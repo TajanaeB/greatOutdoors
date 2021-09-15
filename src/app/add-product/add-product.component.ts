@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ProductData } from 'src/ProductData';
 import { HttpClient } from '@angular/common/http';
 
@@ -31,10 +31,10 @@ export class AddProductComponent implements OnInit {
       "name": this.product.name,
       "price": this.product.price,
       "description": this.product.description,
-      "id": this.product.id,
       "quantity": this.product.quantity,
-
-      "imageUri": this.product.imageUrl
+      "imageUri": this.product.imageUrl,
+      "category":this.product.category,
+      "id":""
     }
 
     this.http.post(this.postUrl, add).subscribe();
@@ -68,7 +68,8 @@ export class AddProductComponent implements OnInit {
       "description": this.product.description,
       "id": this.product.id,
       "quantity": this.product.quantity,
-      "imageUrl": this.product.imageUrl
+      "imageUri": this.product.imageUrl,
+      "category":this.product.category
 
   }
   
