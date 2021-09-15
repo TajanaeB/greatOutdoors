@@ -1,22 +1,26 @@
 
-
-<div class="container">
+<div class="flex-container">
     <app-header></app-header>
+
+<div class="flex-container">
+    <div class="float-container">
+    <div class="container" class="float-main-child">
+        <app-side-menu></app-side-menu>
+    </div>
+    <div class="container" class="float-side-child">
+        <app-product></app-product>
+    </div>
+    </div>
 </div>
 
-<div class="container">
-    <app-side-menu></app-side-menu>
 </div>
 
-<div class="container">
-    <app-add-product></app-add-product>
-
-<app-list-products></app-list-products>
-</div>
-
-<div class="container">
+<div class = "flex-container">
     <app-footer></app-footer>
 </div>
+
+
+
 
 
 

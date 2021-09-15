@@ -1,1 +1,13 @@
-<p>product works!</p>
+<div id="appAddProduct" class="container">
+    <span *ngIf="showAddProduct">
+       <app-add-product></app-add-product> 
+    </span>
+    
+</div>
+
+<div id="appListProduct" class="container">
+    <span *ngIf="showListProduct">
+        <app-list-products></app-list-products>
+    </span>
+    
+</div>

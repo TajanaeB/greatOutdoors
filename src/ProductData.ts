@@ -6,5 +6,6 @@ export class ProductData{
     id: number = 0;
     quantity: number = 0;
     imageUrl: string = "";
-    categroy: string ="";
+    category: string = "";
+
 }
