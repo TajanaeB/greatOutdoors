@@ -2,6 +2,8 @@
     <div class="border">
         <button class="btn btn-md btn-outline-primary"><i class="fa fa-plus">Add Product</i> </button>
     </div>
+
+   
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -15,12 +17,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of productsData">
+            <tr *ngFor="let product of productsData; trackBy: trackElement">
                 <td><span>{{product.id}}</span></td>
                 <td><span>{{product.name}}</span></td>
                 <td><span>{{product.description}}</span></td>
-                <td><span>{{product.imageUrl}}</span></td>
                 <td><span>{{product.price}}</span></td>
+                <td><span>{{product.imageUrl}}</span></td>
                 <td><span>{{product.category}}</span></td>
                 <td><span>{{product.quantity}}</span></td>
                 <td>
@@ -35,3 +37,4 @@
         </tbody>
     </table>
 </div>
+

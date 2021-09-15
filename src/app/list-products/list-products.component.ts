@@ -16,7 +16,9 @@ export class ListProductsComponent implements OnInit {
 
   getAllProductsUrl = "http://localhost:8080/Product/all";
 
-  constructor(private http: HttpClient) { }
+  deleteProductUrl = "http://localhost:8080/Product/delete/"
+
+  constructor(private http: HttpClient,) { }
 
   ngOnInit(): void {
     this.fetchProducts();
@@ -35,5 +37,15 @@ export class ListProductsComponent implements OnInit {
 
   deleteProduct(productId: number){
     console.log("delete product with id: " + productId);
+    this.http.delete(this.deleteProductUrl + productId).subscribe();
+    setTimeout(() =>
+    this.fetchProducts(),
+    500);
   }
+
+  trackElement(index: number, productData: ProductData) {
+    return productData.id;
+  }
+
+
 }

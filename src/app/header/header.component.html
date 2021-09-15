@@ -1,0 +1,48 @@
+
+<div class="header"></div>
+
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+
+  <div>
+  <li ngbNavItem>
+  <img class="logo" src="src/assets/images/GOLogo.png"> 
+   </li>  
+</div>
+
+
+  
+    <li ngbNavItem>
+      <a ngbNavLink class="header-link">Home</a>
+      <ng-template ngbNavContent>First content</ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink class="header-link">Products</a>
+      <ng-template ngbNavContent>Second content</ng-template>
+    </li>
+    <li ngbNavItem>
+        <a ngbNavLink class="header-link">About Us</a>
+        <ng-template ngbNavContent>Third content</ng-template>
+      </li>
+      <li ngbNavItem>
+        <a ngbNavLink class="header-link">Gift Cards</a>
+        <ng-template ngbNavContent>Fourth content</ng-template>
+      </li>
+      <li ngbNavItem>
+        <a ngbNavLink class="header-link">Outdoor Tips</a>
+        <ng-template ngbNavContent>Fifth content</ng-template>
+      </li>
+      <li ngbNavItem>
+        <a ngbNavLink class="header-link">Help</a>
+        <ng-template ngbNavContent>Fourth content</ng-template>
+      </li>
+      <li ngbNavItem class="sign-in">
+        <a ngbNavLink class="header-link">SIGN IN</a>
+        <ng-template ngbNavContent>Sixth content</ng-template>
+      </li>
+      <li ngbNavItem>
+        <a ngbNavLink class="header-link">(CART)</a>
+        <ng-template ngbNavContent>Seventh content</ng-template>
+      </li>
+
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
