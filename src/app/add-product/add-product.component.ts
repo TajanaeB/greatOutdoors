@@ -17,7 +17,7 @@ export class AddProductComponent implements OnInit {
 
   postUrl = "http://localhost:8080/Product/addProduct";
   geturl = "http://localhost:8080/Product/";
-  deleteUrl = "http://localhost:8080/Product/deleteProduct/";
+  deleteUrl = "http://localhost:8080/Product/delete/";
   putUrl = "http://localhost:8080/Product/updateProduct/";
   constructor(private http: HttpClient) { }
 
@@ -33,7 +33,7 @@ export class AddProductComponent implements OnInit {
       "description": this.product.description,
       "id": this.product.id,
       "quantity": this.product.quantity,
-      "imageUri": this.product.imageUri
+      "imageUri": this.product.imageUrl
     }
 
     this.http.post(this.postUrl, add).subscribe();
@@ -67,7 +67,7 @@ export class AddProductComponent implements OnInit {
       "description": this.product.description,
       "id": this.product.id,
       "quantity": this.product.quantity,
-      "imageUri": this.product.imageUri
+      "imageUri": this.product.imageUrl
   }
   
   this.http.put(this.putUrl, update).subscribe();
