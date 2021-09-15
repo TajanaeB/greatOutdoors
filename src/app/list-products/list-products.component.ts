@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ProductData } from 'src/ProductData';
 
 @Component({
@@ -9,11 +9,14 @@ import { ProductData } from 'src/ProductData';
 })
 export class ListProductsComponent implements OnInit {
   
+
+
   product = new ProductData();
   productsData: any;
   getAllProductsUrl = "http://localhost:8080/Product/all";
   deleteProductUrl = "http://localhost:8080/Product/delete/";
 
+  show = false;
   constructor(private http: HttpClient,) { }
 
   ngOnInit(): void {
@@ -42,6 +45,8 @@ export class ListProductsComponent implements OnInit {
   trackElement(index: number, productData: ProductData) {
     return productData.id;
   }
+
+ 
 
 
 }

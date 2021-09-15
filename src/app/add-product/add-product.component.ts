@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ProductData } from 'src/ProductData';
 import { HttpClient } from '@angular/common/http';
 

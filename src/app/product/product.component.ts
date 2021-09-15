@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-product',
@@ -6,12 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
- showAddProduct = false;
- showListProduct = true;
- 
+
+  addProductView = false;
+  listProductView = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+ 
+  addProductClicked(){
+    this.addProductView = true;
+    this.listProductView = false;
+  }
+  showListProduct(){
+    this.addProductView = false;
+    this.listProductView = true;
   }
 
 }
