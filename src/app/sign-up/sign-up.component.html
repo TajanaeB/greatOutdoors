@@ -1,7 +1,6 @@
 
 
-
-<div class="loginForm">
+<div class="signUpForm">
     
     <form #myForm="ngForm">
     
@@ -25,17 +24,23 @@
     
         <div class="FormGroup">
     
-            <label for="password">Password: </label>
-            <input type="text" name="password" class="form-control" [(ngModel)]= "user.password">
+            <label for="Password">Password: </label>
+            <input type="text" name="Password" class="form-control" [(ngModel)]= "user.password">
+    
+        </div>
+        <br>
+
+
+        <div class="FormGroup">
+    
+            <label for="confirmPass">Confirm Password: </label>
+            <input type="text" name="confrimPass" class="form-control">
     
         </div>
         <br>
 
     
-    
-        <button type="submit"> Log In </button>
-
-
+        
         <button type="submit" class="button"> Sign Up </button>
       
         <ul>
@@ -43,6 +48,3 @@
         </ul>
     </form>
     </div>
-
-
-    

@@ -1,18 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/User';
 import { HttpClient } from '@angular/common/http';
-// MDB Angular Free
-// Angular Forms Modules
-
 
 @Component({
-  selector: 'app-log-in',
-  templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.css']
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
 })
-export class LogInComponent implements OnInit {
-
-
+export class SignUpComponent implements OnInit {
   user = new User();
 
   returnData: any;
@@ -28,12 +23,14 @@ export class LogInComponent implements OnInit {
 
 
 
-  SignIn(){
+  SignUp(){
 
-    var signIn: any = {
+    var SignUp: any = {
       "email":this.user.email,
       "phoneNumber": this.user.phoneNumber,
-      "password": this.user.password
+      "password": this.user.password,
+      "confirmPassword": this.user.password
+
     }
    
   }

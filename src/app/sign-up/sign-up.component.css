@@ -1,4 +1,4 @@
-.loginForm {
+.signUpForm {
     background-color: rgb(16, 148, 16);
     font-weight: bold;
     font-size: medium;
@@ -6,4 +6,5 @@
     width: 50%;
     border: 4px solid black;
     margin-left: 30%;
+    align-items: center;
 }
