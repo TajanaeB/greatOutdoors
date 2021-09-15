@@ -1,0 +1,33 @@
+<div class="productForm">
+    <form #myForm="ngForm">
+        <label>Edit Product: {{editProductData.id}}</label>
+        <div class="FormGroup">
+            <label for="productname">Name: </label>
+            <input #fNameTemp="ngModel" type="text" name="productname" class="form-control" [(ngModel)]= "editProductData.name">
+        </div>
+        <div class="FormGroup">
+            <label for="price">Price: </label>
+            <input type="number" name="Price" class="form-control" [(ngModel)]= "editProductData.price">
+        </div>
+        <div class="FormGroup">
+            <label for="proddescription">Description: </label>
+            <input type="text" name="proddescription" class="form-control" [(ngModel)]= "editProductData.description">
+        </div>
+        <div class="FormGroup">
+            <label for="prodquantity">Quantity: </label>
+            <input type="number" name="prodquantity" class="form-control" [(ngModel)]= "editProductData.quantity">
+        </div>
+        <div class="FormGroup">
+            <label for="imageUrl">Image Url</label>
+            <input type="text" name="imageUrl" class="form-control" [(ngModel)]= "editProductData.imageUrl">
+        </div>
+        <div class="FormGroup">
+            <label for="category">Category</label>
+            <input type="text" name="category" class="form-control" [(ngModel)]= "editProductData.category">
+        </div>
+        <br>
+    
+        <button type="submit"  class="fa fa-check" (click)="editProduct()"> Confirm </button>
+        <button type="submit"  class="fa fa-close" (click)="canelEditProduct()"> Cancel </button>
+    </form>
+    </div>

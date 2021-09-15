@@ -25,4 +25,6 @@ export class ProductComponent implements OnInit {
     this.listProductView = true;
   }
 
+
+
 }

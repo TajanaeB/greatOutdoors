@@ -13,6 +13,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     SideMenuComponent,
     FooterComponent,
-    LogInComponent
+    LogInComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
