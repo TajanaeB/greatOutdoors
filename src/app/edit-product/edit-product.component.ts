@@ -29,7 +29,7 @@ export class EditProductComponent implements OnInit {
       "name": this.editProductData.name,
       "price": this.editProductData.price,
       "description": this.editProductData.description,
-      "id": this.editProductData.id,
+      "product_id": this.editProductData.product_id,
       "quantity": this.editProductData.quantity,
       "imageUrl": this.editProductData.imageUrl,
       "category":this.editProductData.category
@@ -47,3 +47,5 @@ export class EditProductComponent implements OnInit {
   }
 
 }
+
+

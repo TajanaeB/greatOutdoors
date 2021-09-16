@@ -48,7 +48,6 @@ export class ListProductsComponent implements OnInit {
     });
     setTimeout(() =>
     this._interactionService.sendEditProduct(this.editData),
-    
     500);
     this.editProductView = true;
   }
@@ -61,8 +60,13 @@ export class ListProductsComponent implements OnInit {
     500);
   }
 
+  addProductToCart(productId: number){
+    console.log("added product with id: " + productId + " to cart");
+
+  }
+
   trackElement(index: number, productData: ProductData) {
-    return productData.id;
+    return productData.product_id;
   }
 
  

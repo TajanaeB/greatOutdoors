@@ -19,6 +19,8 @@ export class AddProductComponent implements OnInit {
   geturl = "http://localhost:8080/Product/";
   deleteUrl = "http://localhost:8080/Product/delete/";
   putUrl = "http://localhost:8080/Product/updateProduct/";
+
+  
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -32,7 +34,7 @@ export class AddProductComponent implements OnInit {
       "price": this.product.price,
       "description": this.product.description,
       "quantity": this.product.quantity,
-      "imageUri": this.product.imageUrl,
+      "imageUrl": this.product.imageUrl,
       "category":this.product.category,
       "id":""
     }
@@ -41,8 +43,8 @@ export class AddProductComponent implements OnInit {
   }
 
   fetchProduct() {
-    if (this.product.id != 0) {
-      this.http.get(this.geturl + this.product.id).subscribe((res) => {
+    if (this.product.product_id != 0) {
+      this.http.get(this.geturl + this.product.product_id).subscribe((res) => {
         this.returnData = res;
         this.returnData = [this.returnData];
       });
@@ -56,7 +58,7 @@ export class AddProductComponent implements OnInit {
 
 
   removeProduct(){
-    this.http.delete(this.deleteUrl+ this.product.id).subscribe();
+    this.http.delete(this.deleteUrl+ this.product.product_id).subscribe();
   }
 
 
@@ -66,7 +68,7 @@ export class AddProductComponent implements OnInit {
       "name": this.product.name,
       "price": this.product.price,
       "description": this.product.description,
-      "id": this.product.id,
+      "id": this.product.product_id,
       "quantity": this.product.quantity,
       "imageUri": this.product.imageUrl,
       "category":this.product.category
