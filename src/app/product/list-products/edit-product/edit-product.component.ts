@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductData } from 'src/ProductData';
-import { ListEditProductInteractionService } from '../list-edit-product-interaction.service';
+import { ListEditProductInteractionService } from '../../../list-edit-product-interaction.service';
 
 @Component({
   selector: 'app-edit-product',

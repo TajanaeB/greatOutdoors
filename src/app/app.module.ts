@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
-import { AddProductComponent } from './add-product/add-product.component';
+import { AddProductComponent } from './product/add-product/add-product.component';
 import { FormsModule } from '@angular/forms';
-import { ListProductsComponent } from './list-products/list-products.component';
+import { ListProductsComponent } from './product/list-products/list-products.component';
 
 import { HeaderComponent } from './header/header.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
@@ -14,7 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { EditProductComponent } from './edit-product/edit-product.component';
+import { EditProductComponent } from './product/list-products/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
