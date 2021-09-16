@@ -1,6 +1,6 @@
 <div class="productForm">
     <form #myForm="ngForm">
-        <label>Edit Product: {{editProductData.id}}</label>
+        <label>Edit Product: {{editProductData.product_id}}</label>
         <div class="FormGroup">
             <label for="productname">Name: </label>
             <input #fNameTemp="ngModel" type="text" name="productname" class="form-control" [(ngModel)]= "editProductData.name">
