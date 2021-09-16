@@ -18,7 +18,7 @@ export class LogInComponent implements OnInit {
   returnData: any;
 
 
-
+  postUrl = "http://localhost:8080/User/LogIn";
 
 
   constructor(private http: HttpClient) { }
@@ -28,13 +28,15 @@ export class LogInComponent implements OnInit {
 
 
 
-  SignIn(){
+ LogIn(){
 
-    var signIn: any = {
+    var LogIn: any = {
       "email":this.user.email,
       "phoneNumber": this.user.phoneNumber,
       "password": this.user.password
     }
    
+    this.http.post(this.postUrl, LogIn).subscribe();
   }
 }
+

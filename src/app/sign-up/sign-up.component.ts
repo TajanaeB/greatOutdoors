@@ -8,12 +8,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+
   user = new User();
 
   returnData: any;
 
 
-
+  postUrl = "http://localhost:8080/User/addUser";
 
 
   constructor(private http: HttpClient) { }
@@ -23,15 +24,16 @@ export class SignUpComponent implements OnInit {
 
 
 
-  SignUp(){
+ addUser(){
 
-    var SignUp: any = {
+    var addUser: any = {
       "email":this.user.email,
       "phoneNumber": this.user.phoneNumber,
       "password": this.user.password,
       "confirmPassword": this.user.password
 
     }
-   
+    this.http.post(this.postUrl, addUser).subscribe();
   }
+
 }
