@@ -1,0 +1,50 @@
+
+
+.h1{
+    color: red;
+    font-weight: bolder;
+    align-content: center;
+}
+
+.h2{
+    font-weight: bold;
+    float: left;
+}
+
+
+.h3{
+    font-weight: lighter;
+   float: left;
+}
+
+
+.tents{
+    float: right;
+}
+
+
+.huntingA{
+    border: 10px solid black;
+    float: right;
+    margin-right: 100px;
+    background-color: red;
+    padding: 50px;
+    margin-top: -280px;
+    color: black;
+}
+
+
+.sale{
+    border: 10px solid black;
+    float: left;
+    margin-left: 100px;
+    margin-top: 180px;
+    font-size: 10px;
+    padding: 50px;
+    font-weight: bold !important;
+    background-color: red;
+    color: black;
+    
+}
+
+

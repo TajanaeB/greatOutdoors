@@ -1,6 +1,6 @@
 .nav {
     justify-content: center;
-    background-color:gray;
+    background-color:red;
     border: 2px solid red;
     color: black;
 }
@@ -9,6 +9,12 @@
     color: black;
 }
 
-.logo {
-    border-radius: 50%;
+
+.logo{
+
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-left: 220px;
 }
+
