@@ -31,7 +31,9 @@ export class SignUpComponent implements OnInit {
       this.user = {
         userName: '',
         email: '',
-        password: ''
+        password: '',
+        address: '',
+        role: ''
       }
     }
   }
@@ -40,7 +42,9 @@ export class SignUpComponent implements OnInit {
     var addUser: any = {
       "userName": this.user.userName,
       "email":this.user.email,
-      "password": this.user.password
+      "password": this.user.password,
+      "address": this.user.address,
+      "role": this.user.role
     }
     this.http.post(this.postUrl, addUser).subscribe();
 }

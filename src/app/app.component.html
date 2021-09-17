@@ -3,8 +3,15 @@
 <div class="flex-container">
     <app-header></app-header>
 </div>
+<div class="container" *ngIf="loggedUser">
+    <label>Logged User</label><br>
+    <label>{{currentUser.userName}}</label><br>
+    <label>{{currentUser.email}}</label><br>
+    <label>{{currentUser.role}}</label><br>
+</div>
 
 <div class="flex-container">
+    <app-log-in></app-log-in>
     <app-sign-up></app-sign-up>
 </div>
 

@@ -7,4 +7,5 @@ export class ProductData{
     quantity: number = 0;
     imageUrl: string = "";
     category: string = "";
+    
 }

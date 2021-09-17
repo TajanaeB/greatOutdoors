@@ -1,42 +1,31 @@
 
-
-
-<div class="loginForm">
-    
-    <form #myForm="ngForm">
-    
-        <div class="FormGroup">
-    
-            <label for="email">Email:</label>
-            <input #fNameTemp="ngModel" type="text" name="email" class="form-control" [(ngModel)]= "user.email">
-            
+<div class="row">
+    <div class="col s8 offset-s2">
+        <div class="card">
+            <div class="sm-jumbotron center-align">
+                <h2>User Login</h2>
+            </div>
+            <form class="col s12 white" #userLoginForm="ngForm">
+                
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="validate" type="text" name="Email" #Email="ngModel" [(ngModel)]="user.email" [pattern]="emailPattern" required>
+                        <label [attr.data-error]="Email.errors!=null?(Email.errors.required?'Required field!':'Invalid Email!'):''">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="validate" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.password" required minlength="8">
+                        <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required field!':'Minimum 8 Characters needed'):''">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <button [disabled]="!userLoginForm.valid" class="btn-large btn-submit" type="submit" (click)="userLogin()">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <br>
-    
-
-        <br>
-    
-    
-        <div class="FormGroup">
-    
-            <label for="password">Password: </label>
-            <input type="text" name="password" class="form-control" [(ngModel)]= "user.password">
-    
-        </div>
-        <br>
-
-    
-    
-        <button type="submit"> Log In </button>
-
-
-        <button type="submit" class="button"> Sign Up </button>
-      
-        <ul>
-            <li  *ngFor="let data of returnData" style="list-style: none;">{{data.name}}</li>
-        </ul>
-    </form>
     </div>
-
-
+</div>
     
