@@ -15,6 +15,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     FooterComponent,
     LogInComponent,
     SignUpComponent,
-    EditProductComponent
+    EditProductComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
