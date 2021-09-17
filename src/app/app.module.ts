@@ -9,12 +9,12 @@ import { FormsModule } from '@angular/forms';
 import { ListProductsComponent } from './product/list-products/list-products.component';
 
 import { HeaderComponent } from './header/header.component';
-import { SideMenuComponent } from './side-menu/side-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { EditProductComponent } from './product/list-products/edit-product/edit-product.component';
+import { SideMenuComponent } from './product/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +23,11 @@ import { EditProductComponent } from './product/list-products/edit-product/edit-
     AddProductComponent,
     ListProductsComponent,
     HeaderComponent,
-    SideMenuComponent,
     FooterComponent,
     LogInComponent,
     SignUpComponent,
-    EditProductComponent
+    EditProductComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,

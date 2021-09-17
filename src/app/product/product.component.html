@@ -5,17 +5,28 @@
     <span *ngIf="addProductView">
         <button class="btn btn-md btn-outline-primary"><i class="fa fa-plus" (click)="showListProduct()">Show Product List</i> </button>
     </span>
-
-    
 </div>
 
-<div class="container" *ngIf="addProductView">
-    <app-add-product ></app-add-product>
-    
-    
+
+
+<div class="flex-container">
+    <div class="float-container">
+        <div class="container" class="float-main-child">
+            <app-side-menu></app-side-menu>
+        </div>
+        <div class="container" class="float-side-child">
+            <div class="container" *ngIf="addProductView">
+                <app-add-product ></app-add-product>
+            </div>
+        </div>
+        <div  class="container" *ngIf="listProductView" class="float-side-child">
+            <app-list-products></app-list-products>
+            
+    </div>
+    </div>
 </div>
 
-<div  class="container" *ngIf="listProductView">
-        <app-list-products></app-list-products>
-        
-</div>
+
+
+
+
