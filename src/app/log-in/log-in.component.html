@@ -3,16 +3,16 @@
         <div class="col s8 offset-s2">
             <div class="card">
                 <div class="sm-jumbotron center-align">
-                    <h2>User Login</h2>
+                    <h2>User Login</h2><br>
                 </div>
-                <form class="col s12 white" #userLoginForm="ngForm">
+                <form class="col s12 white" #userLoginForm="ngForm"><br><br><br>
                     
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div class="input-field col s6"><br><br>
                             <input class="validate" type="text" name="Email" #Email="ngModel" [(ngModel)]="user.email" [pattern]="emailPattern" required>
                             <label [attr.data-error]="Email.errors!=null?(Email.errors.required?'Required field!':'Invalid Email!'):''">Email</label>
                         </div>
-                    </div>
+                    </div><br><br>
                     <div class="row">
                         <div class="input-field col s6">
                             <input class="validate" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.password" required minlength="8">
@@ -20,11 +20,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div class="input-field col s6"><br><br><br>
                             <button [disabled]="!userLoginForm.valid" class="btn-large btn-submit" type="submit" (click)="userLogin()">Submit</button>
                         </div>
                        
-                        <div class="input-field col s6">
+                        <div class="input-field col s6"><br><br><br>
                             <button type="submit" class="btn-large btn-submit" href="#" routerLink="/signup" routerLinkActive="active"> Sign Up </button>
                         </div>
                     </div>

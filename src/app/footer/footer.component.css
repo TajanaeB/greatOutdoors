@@ -2,12 +2,11 @@
 
 .footer {
     position: absolute;
-    margin-bottom:-600px;
+    margin-bottom:-420px;
     width:100%;
-    height:20px;
-    border: 2px solid red;
-    display: flex;
+    height:40px;
+    border: 4px solid red;
     justify-content: space-evenly;
     left: 0; right: 0; bottom: 0;
-    
+   background-color: red;
 }

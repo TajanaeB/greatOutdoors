@@ -15,9 +15,8 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { ListProductsComponent } from './product/list-products/list-products.component';
 import { EditProductComponent } from './product/list-products/edit-product/edit-product.component';
 import { SideMenuComponent } from './product/side-menu/side-menu.component';
-
-
 import { MainComponent } from './main/main.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,8 @@ import { MainComponent } from './main/main.component';
     SignUpComponent,
     EditProductComponent,
     SideMenuComponent,
-    MainComponent
+    MainComponent,
+    CartComponent
 
   ],
   imports: [
