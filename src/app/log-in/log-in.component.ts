@@ -32,7 +32,7 @@ export class LogInComponent implements OnInit {
 
     var LogIn: any = {
       "email":this.user.email,
-      "phoneNumber": this.user.phoneNumber,
+      "userName": this.user.userName,
       "password": this.user.password
     }
    

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/User';
 import { HttpClient } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class SignUpComponent implements OnInit {
 
   user = new User();
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
   returnData: any;
 
@@ -20,20 +22,27 @@ export class SignUpComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.resetForm();
   }
 
-
+  resetForm(form? : NgForm){
+    if(form != null){
+      form.reset();
+      this.user = {
+        userName: '',
+        email: '',
+        password: ''
+      }
+    }
+  }
 
  addUser(){
-
     var addUser: any = {
+      "userName": this.user.userName,
       "email":this.user.email,
-      "phoneNumber": this.user.phoneNumber,
-      "password": this.user.password,
-      "confirmPassword": this.user.password
-
+      "password": this.user.password
     }
     this.http.post(this.postUrl, addUser).subscribe();
-  }
+}
 
 }
