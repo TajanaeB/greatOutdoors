@@ -1,4 +1,9 @@
 
 .flex-container {
     display:flow-root;
+    position: bottom;
+}
+
+.bg {
+    background-color: black;
 }
