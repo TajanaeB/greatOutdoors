@@ -41,7 +41,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

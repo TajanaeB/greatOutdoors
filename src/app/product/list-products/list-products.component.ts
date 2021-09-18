@@ -12,7 +12,7 @@ import { ListEditProductInteractionService } from '../../list-edit-product-inter
 export class ListProductsComponent implements OnInit {
   
   product = new ProductData();
-  user = new User();
+  @Input("userEmailForList") userEmail: string = "";
   productsData: any;
   editData: any;
   editProductView = false;
@@ -35,6 +35,7 @@ export class ListProductsComponent implements OnInit {
         this.editProductView=false;
       }
     })
+
   }
 
   fetchProducts() {
@@ -58,14 +59,12 @@ export class ListProductsComponent implements OnInit {
   deleteProduct(productId: number){
     console.log("delete product with id: " + productId);
     this.http.delete(this.deleteProductUrl + productId).subscribe();
-    setTimeout(() =>
-    this.fetchProducts(),
-    500);
+    this.productsData = this.productsData.filter((product: any) => product != this.productsData.find((product: { product_id: number; })=>product.product_id == productId));
   }
 
   addProductToCart(productId: number){
     console.log("added product with id: " + productId + " to cart");
-    this.http.post(this.postProductToUserUrl + productId,this.user.email).subscribe();
+    this.http.post(this.postProductToUserUrl + productId,this.userEmail).subscribe();
 
   }
 

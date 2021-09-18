@@ -1,7 +1,6 @@
 
-
 <div class="flex-container">
-    <app-header></app-header>
+    <app-header (messageEvent)="recieveMessage($event)"></app-header>
 </div>
 <div class="container" *ngIf="loggedUser">
     <label>Logged User</label><br>
@@ -9,10 +8,24 @@
     <label>{{currentUser.email}}</label><br>
     <label>{{currentUser.role}}</label><br>
 </div>
+<div class="container" *ngIf="showHome">
+    <app-main></app-main>
+</div>
+<div class="container" *ngIf="showCart">
+    <app-cart [userCartProducts]="userCartProducts" [userEmail]="userEmail"></app-cart>
+</div>
+<div class="container" *ngIf="showProducts">
+    <app-product [userEmailForList]="userEmail"></app-product>
+</div>
+<div class="container" *ngIf="showLogin" >
+    <app-log-in></app-log-in>
+</div>
+<div class="container" *ngIf="showProfile">
+    <app-profile></app-profile>
+</div>
 
 
-
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 
 
 <div class = "flex-container">

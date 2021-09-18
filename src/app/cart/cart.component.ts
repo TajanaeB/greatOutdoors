@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ProductData } from 'src/ProductData';
+import { User } from 'src/User';
 
 @Component({
   selector: 'app-cart',
@@ -9,27 +10,28 @@ import { ProductData } from 'src/ProductData';
 })
 export class CartComponent implements OnInit {
 
-  product = new ProductData();
-  userProductData: any;
+  @Input("userCartProducts") products: ProductData[] = [];
+  @Input() userEmail : String = "";
 
-  constructor(private http: HttpClient) { }
+  
+  loggedUser = new User;
 
-  getUserProductsUrl = "http://localhost:8080/UserProduct/all"
+  constructor(private http: HttpClient) {
+    
+  }
+  postDeleteProductFromUserUrl = "http://localhost:8080/UserProduct/remove/";
 
   ngOnInit(): void {
-
   }
 
-  fetchUserProducts() {
-    this.http.get(this.getUserProductsUrl).subscribe((res) => {
-      this.userProductData = res;
-      console.log(this.userProductData);
-    });
-}
 
+  
 removeProductFromCart(productId: number){
-
+  console.log("delete product with id: " + productId);
+  this.http.post(this.postDeleteProductFromUserUrl + productId, this.userEmail).subscribe();
+  this.products = this.products.filter(product => product != this.products.find(product=>product.product_id == productId));
 }
+
 
 
 

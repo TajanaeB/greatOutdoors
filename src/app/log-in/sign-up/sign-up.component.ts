@@ -33,7 +33,8 @@ export class SignUpComponent implements OnInit {
         email: '',
         password: '',
         address: '',
-        role: ''
+        role: '',
+        products: []
       }
     }
   }

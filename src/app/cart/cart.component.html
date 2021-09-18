@@ -1,3 +1,4 @@
+
 <div class="container">
     <table class="table table-bordered table-striped">
         <thead>
@@ -9,13 +10,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of userProductData;">
-                <td><span>{{userProductData.name}}</span></td>
-                <td><span>{{userProductData.description}}</span></td>
-                <td><span>{{userProductData.price}}</span></td>
-                <td><span>{{userProductData.imageUrl}}</span></td>
+            <tr *ngFor="let product of products;">
+                <td><span>{{product.name}}</span></td>
+                <td><span>{{product.description}}</span></td>
+                <td><span>{{product.price}}</span></td>
+                <td><span>{{product.imageUrl}}</span></td>
                 <td>
-                    <button class="btn btn-sm btn-primary" (click)="removeProductFromCart(userProductData.product_id)">
+                    <button class="btn btn-sm btn-primary" (click)="removeProductFromCart(product.product_id)">
                         <i class="fa fa-remove" >Remove</i>
                     </button>
                 </td>
