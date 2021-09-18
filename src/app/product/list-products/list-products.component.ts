@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ProductData } from 'src/ProductData';
+import { User } from 'src/User';
 import { ListEditProductInteractionService } from '../../list-edit-product-interaction.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { ListEditProductInteractionService } from '../../list-edit-product-inter
 export class ListProductsComponent implements OnInit {
   
   product = new ProductData();
+  user = new User();
   productsData: any;
   editData: any;
   editProductView = false;
@@ -18,6 +20,7 @@ export class ListProductsComponent implements OnInit {
   getAllProductsUrl = "http://localhost:8080/Product/all";
   deleteProductUrl = "http://localhost:8080/Product/delete/";
   getProductByIdUrl = "http://localhost:8080/Product/";
+  postProductToUserUrl = "http://localhost:8080/UserProduct/add/";
 
   show = false;
   constructor(private http: HttpClient, private _interactionService : ListEditProductInteractionService) { }
@@ -62,6 +65,7 @@ export class ListProductsComponent implements OnInit {
 
   addProductToCart(productId: number){
     console.log("added product with id: " + productId + " to cart");
+    this.http.post(this.postProductToUserUrl + productId,this.user.email).subscribe();
 
   }
 
