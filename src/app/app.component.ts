@@ -3,6 +3,7 @@ import { ProductData } from 'src/ProductData';
 import { User } from 'src/User';
 import { LoginAppInteractionService } from './login-app-interaction.service';
 import { EventEmitter } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,8 @@ export class AppComponent implements OnInit {
   currentUser = new User();
   userEmail: string = "";
   userRole: string = "";
+  wishList: ProductData[] = [];
+  users: User[] = [];
   // userCartProducts: ProductData[] = [];
   currentUserRole = this.currentUser.role;
 
@@ -27,7 +30,9 @@ export class AppComponent implements OnInit {
   showProfile = false;
   showHome = true;
 
-  constructor(private _interactionService : LoginAppInteractionService){
+  getAllUsersUrl = "http://localhost:8080/User/all";
+
+  constructor(private _interactionService : LoginAppInteractionService, private http: HttpClient){
 
   }
 
@@ -37,8 +42,14 @@ export class AppComponent implements OnInit {
         // this.userCartProducts = user.products;
         this.userEmail = user.email;
         this.userRole = user.role;
+        this.wishList = user.wishList;
         if(user.email != ""){
           this.userLoggedIn();
+        }
+        if(user.role === "admin"){
+          this.http.get(this.getAllUsersUrl).subscribe((res:any)=>{
+            this.users = res;
+          });
         }
       });
   }

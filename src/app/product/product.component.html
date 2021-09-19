@@ -1,4 +1,4 @@
-<div class="border" *ngIF="userRole === 'product master'">
+<div class="border" *ngIf="userRole === 'product master'">
     <span *ngIf="listProductView">
         <button class="btn btn-md btn-outline-primary"><i class="fa fa-plus" (click)="addProductClicked()" >Add Product</i> </button>
     </span>

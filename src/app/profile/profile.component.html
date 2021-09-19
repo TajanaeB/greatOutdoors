@@ -1,0 +1,9 @@
+<div>
+    <app-address [currentUser]="currentUser"></app-address>
+</div>
+<div *ngIf="currentUser.role === 'admin'">
+    <app-manager-users [users]="users"></app-manager-users>
+</div>
+<div *ngIf="currentUser.role === 'customer'">
+    <app-wishlist [wishList]="wishList" [currentUser]="currentUser"></app-wishlist>
+</div>

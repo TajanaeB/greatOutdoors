@@ -19,7 +19,7 @@
     <app-log-in></app-log-in>
 </div>
 <div *ngIf="showProfile">
-    <app-profile></app-profile>
+    <app-profile [wishList]="wishList" [users]="users" [currentUser]="currentUser"></app-profile>
 </div>
 
 

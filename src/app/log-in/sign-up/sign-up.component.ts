@@ -29,12 +29,14 @@ export class SignUpComponent implements OnInit {
     if(form != null){
       form.reset();
       this.user = {
+        user_id: 0,
         userName: '',
         email: '',
         password: '',
         address: '',
         role: '',
-        products: []
+        products: [],
+        wishList: []
       }
     }
   }

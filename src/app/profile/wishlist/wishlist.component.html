@@ -1,0 +1,29 @@
+<h2>My Wishlist</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of wishList;">
+            <td><span>{{product.name}}</span></td>
+            <td><span>{{product.description}}</span></td>
+            <td><span>{{product.price}}</span></td>
+            <td><span>{{product.imageUrl}}</span></td>
+            <td><span>{{product.category}}</span></td>
+            <td>
+                <button class="btn btn-sm btn-primary" (click)="addProductFromWishListToCart(product.product_id)">
+                    <i class="fa fa-cart-plus" >Add</i>
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="removeProductFromWishList(product.product_id)">
+                    <i class="fa fa-remove">Remove</i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

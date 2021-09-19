@@ -1,0 +1,38 @@
+
+<table class="table table-bordered table-striped" *ngIf="managerUsersView">
+    <h2>Manager Users</h2>
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;">
+            <td><span>{{user.userName}}</span></td>
+            <td><span>{{user.email}}</span></td>
+            <td><span>{{user.address}}</span></td>
+            <td><span>{{user.role}}</span></td>
+            <td>
+                <button class="btn btn-sm btn-primary" (click)="assignUserToProductMaster(user.user_id)" *ngIf="user.role==='customer'">
+                    <i class="fa fa-plus">Assign Product Master</i>
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="unassignUserFromProductMaster(user.user_id)" *ngIf="user.role==='product master'">
+                    <i class="fa fa-minus">Unassign Product Master</i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    <button class="btn btn-sm btn-primary" (click)="addProductMaster()">
+        <i class="fa fa-plus" >Add Product Master</i>
+    </button>
+</table>
+
+<div>
+    <button class="btn btn-sm btn-primary" (click)="managerUsers()" *ngIf="addProductMasterView">
+        <i >Manage Users</i>
+    </button>
+    <app-add-product-master *ngIf="addProductMasterView"></app-add-product-master>
+</div>

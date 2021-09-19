@@ -18,6 +18,10 @@ import { SideMenuComponent } from './product/side-menu/side-menu.component';
 import { MainComponent } from './main/main.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
+import { WishlistComponent } from './profile/wishlist/wishlist.component';
+import { AddressComponent } from './profile/address/address.component';
+import { ManagerUsersComponent } from './profile/manager-users/manager-users.component';
+import { AddProductMasterComponent } from './profile/manager-users/add-product-master/add-product-master.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { ProfileComponent } from './profile/profile.component';
     SideMenuComponent,
     MainComponent,
     CartComponent,
-    ProfileComponent
+    ProfileComponent,
+    WishlistComponent,
+    AddressComponent,
+    ManagerUsersComponent,
+    AddProductMasterComponent
 
   ],
   imports: [
