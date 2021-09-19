@@ -8,6 +8,8 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
+  @Input() userEmailForList: string = "";
+  @Input() userRole: string = "";
   addProductView = false;
   listProductView = true;
 

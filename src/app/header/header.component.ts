@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-header',
@@ -11,8 +11,12 @@ export class HeaderComponent implements OnInit {
   productsClickedMessage: string = "products";
   loginClickedMessage: string = "login";
   profileClickedMessage: string = "profile";
+  logoutClickedMessage: string = "logout";
+  loginButtonClickedMessage: string = "loginButton";
+  
 
   @Output() messageEvent = new EventEmitter();
+  @Input() userLoggedStatus: string = "";
 
   constructor() { }
 
@@ -33,6 +37,9 @@ export class HeaderComponent implements OnInit {
   }
   profileClicked(){
     this.messageEvent.emit(this.profileClickedMessage);
+  }
+  logoutClicked(){
+    this.messageEvent.emit(this.logoutClickedMessage);
   }
 
   myimage2:string = "src/assets/images/GOLogo.png";

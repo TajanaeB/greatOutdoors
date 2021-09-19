@@ -1,4 +1,4 @@
-<div class="border">
+<div class="border" *ngIF="userRole === 'product master'">
     <span *ngIf="listProductView">
         <button class="btn btn-md btn-outline-primary"><i class="fa fa-plus" (click)="addProductClicked()" >Add Product</i> </button>
     </span>
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div  class="container" *ngIf="listProductView" class="float-side-child">
-            <app-list-products></app-list-products>
+            <app-list-products [userEmailForList]="userEmailForList" [userRole] = "userRole"></app-list-products>
             
     </div>
     </div>

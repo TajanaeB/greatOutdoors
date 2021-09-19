@@ -1,26 +1,24 @@
 
 <div class="flex-container">
-    <app-header (messageEvent)="recieveMessage($event)"></app-header>
+    <app-header [userLoggedStatus] = "userLoggedInMessage" (messageEvent)="recieveMessage($event)"></app-header>
 </div>
-<div class="container" *ngIf="loggedUser">
-    <label>Logged User</label><br>
-    <label>{{currentUser.userName}}</label><br>
-    <label>{{currentUser.email}}</label><br>
-    <label>{{currentUser.role}}</label><br>
+<div *ngIf="loggedUser">
+    <h2>Welcome {{currentUser.userName}}, Enjoy shopping with us </h2>
 </div>
-<div class="container" *ngIf="showHome">
+<div  *ngIf="showHome">
     <app-main></app-main>
 </div>
-<div class="container" *ngIf="showCart">
-    <app-cart [userCartProducts]="userCartProducts" [userEmail]="userEmail"></app-cart>
+<div  *ngIf="showCart">
+    <!-- [userCartProducts]="userCartProducts" -->
+    <app-cart  [userEmail]="userEmail"></app-cart>
 </div>
-<div class="container" *ngIf="showProducts">
-    <app-product [userEmailForList]="userEmail"></app-product>
+<div *ngIf="showProducts">
+    <app-product [userEmailForList]="userEmail" [userRole] ="userRole"></app-product>
 </div>
-<div class="container" *ngIf="showLogin" >
+<div  *ngIf="showLogin" >
     <app-log-in></app-log-in>
 </div>
-<div class="container" *ngIf="showProfile">
+<div *ngIf="showProfile">
     <app-profile></app-profile>
 </div>
 

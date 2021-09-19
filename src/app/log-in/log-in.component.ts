@@ -21,7 +21,6 @@ export class LogInComponent implements OnInit {
 
   checkUserUrl = "http://localhost:8080/User/checkUser";
 
-
   constructor(private _interactionService: LoginAppInteractionService, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -30,14 +29,12 @@ export class LogInComponent implements OnInit {
   userLogin(){
     var user: any = {
       "email":this.user.email,
-      "userName": "",
-      "password": this.user.password,
-      "address": ""
+      "password": this.user.password
     }
     this.http.post(this.checkUserUrl, user).subscribe(res=>{
       this.userLoginResponse = res;
       console.log(this.userLoginResponse);
-      if(this.userLoginResponse.name = null){
+      if(this.userLoginResponse.email == null){
         console.log("User does not exist");
       }else{
         this.UserLoginSuccess(this.userLoginResponse);

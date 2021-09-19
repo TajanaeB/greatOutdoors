@@ -21,13 +21,13 @@
                 <td><span>{{product.category}}</span></td>
                 <td><span>{{product.quantity}}</span></td>
                 <td>
-                    <button class="btn btn-sm btn-primary" (click)="addProductToCart(product.product_id)">
+                    <button class="btn btn-sm btn-primary" (click)="addProductToCart(product.product_id)" *ngIf="role ==='customer'">
                         <i class="fa fa-cart-plus" >Add to cart</i>
                     </button>
-                    <button class="btn btn-sm btn-warning" (click)="editProduct(product.product_id)">
+                    <button class="btn btn-sm btn-warning" (click)="editProduct(product.product_id)" *ngIf="role ==='product master'">
                         <i class="fa fa-edit" >Edit</i>
                     </button>
-                    <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.product_id)">
+                    <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.product_id)" *ngIf="role ==='product master'">
                         <i class="fa fa-remove">Delete</i>
                     </button>
                 </td>

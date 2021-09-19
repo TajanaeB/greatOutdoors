@@ -1,7 +1,8 @@
-import { Component,  OnInit, } from '@angular/core';
+import { Component,  OnInit, Output, } from '@angular/core';
 import { ProductData } from 'src/ProductData';
 import { User } from 'src/User';
 import { LoginAppInteractionService } from './login-app-interaction.service';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,11 @@ export class AppComponent implements OnInit {
   loggedUser = false;
   currentUser = new User();
   userEmail: string = "";
-  userCartProducts: ProductData[] = [];
+  userRole: string = "";
+  // userCartProducts: ProductData[] = [];
+  currentUserRole = this.currentUser.role;
+
+  userLoggedInMessage = "userLoggedOut";
 
   showCart = false;
   showProducts = false;
@@ -29,12 +34,23 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
       this._interactionService.loggedInUser$.subscribe(user=>{
         this.currentUser = user;
-        this.userCartProducts = user.products;
+        // this.userCartProducts = user.products;
         this.userEmail = user.email;
+        this.userRole = user.role;
         if(user.email != ""){
-          this.loggedUser = true;
+          this.userLoggedIn();
         }
       });
+  }
+
+  userLoggedIn(){
+    this.loggedUser = true;
+    this.userLoggedInMessage = "userLoggedIn";
+    this.showCart = false;
+    this.showProducts = true;
+    this.showLogin = false;
+    this.showProfile = false;
+    this.showHome = false;
   }
 
   recieveMessage($event:string){
@@ -68,6 +84,19 @@ export class AppComponent implements OnInit {
       this.showLogin = false;
       this.showProfile = false;
       this.showHome = false;
+    }
+    else if($event === "logout"){
+      this.currentUser = new User;
+      // this.userCartProducts = [];
+      this.userLoggedInMessage = "userLoggedOut";
+      this.userEmail = "";
+      this.userRole = "";
+      this.showCart = false;
+      this.showProducts = false;
+      this.showLogin = false;
+      this.showProfile = false;
+      this.showHome = true;
+      this.loggedUser = false;
     }
   }
 

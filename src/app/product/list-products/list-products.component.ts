@@ -13,6 +13,8 @@ export class ListProductsComponent implements OnInit {
   
   product = new ProductData();
   @Input("userEmailForList") userEmail: string = "";
+  @Input("userRole") role: string = "";
+  
   productsData: any;
   editData: any;
   editProductView = false;
@@ -34,7 +36,7 @@ export class ListProductsComponent implements OnInit {
       }else if(message === 'close'){
         this.editProductView=false;
       }
-    })
+    });
 
   }
 

@@ -18,11 +18,14 @@
       <li class="nav-item">
         <a class="nav-link" (click)="cartClicked()">Cart</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="userLoggedStatus === 'userLoggedIn'">
         <a class="nav-link" (click)="profileClicked()">Profile</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!(userLoggedStatus === 'userLoggedIn')" >
         <a class="nav-link" (click)="loginClicked()">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="userLoggedStatus === 'userLoggedIn'">
+        <a class="nav-link" (click)="logoutClicked()">Logout</a>
       </li>
     </ul>
   </div>
