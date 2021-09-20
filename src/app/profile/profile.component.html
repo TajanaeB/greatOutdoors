@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="currentUser.role === 'customer'">
     <app-address [currentUser]="currentUser"></app-address>
 </div>
 <div *ngIf="currentUser.role === 'admin'">

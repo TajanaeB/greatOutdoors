@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of wishList;">
+        <tr *ngFor="let product of wishList; trackBy: trackElement">
             <td><span>{{product.name}}</span></td>
             <td><span>{{product.description}}</span></td>
             <td><span>{{product.price}}</span></td>

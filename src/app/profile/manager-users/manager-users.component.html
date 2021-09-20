@@ -1,26 +1,26 @@
-
+<h2>Manage Users</h2>
 <table class="table table-bordered table-striped" *ngIf="managerUsersView">
-    <h2>Manager Users</h2>
     <thead>
         <tr>
             <th>Username</th>
             <th>Email</th>
             <th>Address</th>
             <th>Role</th>
+            <th>Product Master Privilage</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of users;">
+        <tr *ngFor="let user of users; trackBy: trackElement">
             <td><span>{{user.userName}}</span></td>
             <td><span>{{user.email}}</span></td>
             <td><span>{{user.address}}</span></td>
             <td><span>{{user.role}}</span></td>
             <td>
-                <button class="btn btn-sm btn-primary" (click)="assignUserToProductMaster(user.user_id)" *ngIf="user.role==='customer'">
-                    <i class="fa fa-plus">Assign Product Master</i>
+                <button class="btn btn-sm btn-primary" (click)="assignUserToProductMaster(user)" *ngIf="user.role==='customer'">
+                    <i class="fa fa-plus">Assign</i>
                 </button>
-                <button class="btn btn-sm btn-danger" (click)="unassignUserFromProductMaster(user.user_id)" *ngIf="user.role==='product master'">
-                    <i class="fa fa-minus">Unassign Product Master</i>
+                <button class="btn btn-sm btn-danger" (click)="unassignUserFromProductMaster(user)" *ngIf="user.role==='product master'">
+                    <i class="fa fa-minus">Unassign</i>
                 </button>
             </td>
         </tr>

@@ -23,6 +23,7 @@ export class ListProductsComponent implements OnInit {
   deleteProductUrl = "http://localhost:8080/Product/delete/";
   getProductByIdUrl = "http://localhost:8080/Product/";
   postProductToUserUrl = "http://localhost:8080/UserProduct/add/";
+  postProductToUserWishListUrl = "http://localhost:8080/UserProduct/add/wishlist/"
 
   show = false;
   constructor(private http: HttpClient, private _interactionService : ListEditProductInteractionService) { }
@@ -68,6 +69,11 @@ export class ListProductsComponent implements OnInit {
     console.log("added product with id: " + productId + " to cart");
     this.http.post(this.postProductToUserUrl + productId,this.userEmail).subscribe();
 
+  }
+
+  addToWishList(productId: number){
+    console.log("added product with id: " + productId + " to wishlist");
+    this.http.post(this.postProductToUserWishListUrl + productId,this.userEmail).subscribe();
   }
 
   trackElement(index: number, productData: ProductData) {

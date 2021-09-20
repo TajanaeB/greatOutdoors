@@ -1,4 +1,3 @@
-
 <div class="container">
     <table class="table table-bordered table-striped">
         <thead>
@@ -10,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products;">
+            <tr *ngFor="let product of products; trackBy: trackElement">
                 <td><span>{{product.name}}</span></td>
                 <td><span>{{product.description}}</span></td>
                 <td><span>{{product.price}}</span></td>
@@ -26,7 +25,9 @@
 </div>
 
 <div class="container">
-    <button class="btn btn-sm btn-primary">
-        <i class="fa fa-cash-register" >Checkout</i>
+    <button class="btn btn-sm btn-primary" [disabled]="checkoutButtonIsDisabled">
+        <i class="fa fa-cash-register" (click)="checkout()" >Checkout</i>
     </button>
 </div>
+
+

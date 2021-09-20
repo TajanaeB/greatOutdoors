@@ -23,8 +23,8 @@ export class AddProductMasterComponent implements OnInit {
       "email":this.productMaster.email,
       "password": this.productMaster.password,
       "address": this.productMaster.address,
-      "role": "product master"
+      "role": 'product master'
     }
     this.http.post(this.postUrl, addUser).subscribe();
-}
+  }
 }

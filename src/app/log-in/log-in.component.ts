@@ -22,7 +22,8 @@ export class LogInComponent implements OnInit {
   checkUserUrl = "http://localhost:8080/User/checkUser";
 
   constructor(private _interactionService: LoginAppInteractionService, private http: HttpClient) { }
-
+  showLoginView = true;
+  signupView = false;
   ngOnInit(): void {
   }
 
@@ -45,6 +46,10 @@ export class LogInComponent implements OnInit {
   UserLoginSuccess(user: User){
     this._interactionService.sendUserLoggedIn(user);
 
+  }
+  showSignupView(){
+    this.showLoginView = false;
+    this.signupView = true;
   }
 }
 

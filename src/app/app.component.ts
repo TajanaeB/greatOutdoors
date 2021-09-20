@@ -4,6 +4,7 @@ import { User } from 'src/User';
 import { LoginAppInteractionService } from './login-app-interaction.service';
 import { EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppProfileInteractionService } from './app-profile-interaction.service';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,7 @@ export class AppComponent implements OnInit {
 
   getAllUsersUrl = "http://localhost:8080/User/all";
 
-  constructor(private _interactionService : LoginAppInteractionService, private http: HttpClient){
+  constructor(private _interactionService : LoginAppInteractionService, private http: HttpClient, private _interactionService2: AppProfileInteractionService){
 
   }
 
@@ -46,6 +47,20 @@ export class AppComponent implements OnInit {
         if(user.email != ""){
           this.userLoggedIn();
         }
+        if(user.role === "admin"){
+          this.http.get(this.getAllUsersUrl).subscribe((res:any)=>{
+            this.users = res;
+          });
+        }
+      });
+
+      this._interactionService2.fetchUpdatedUserData$.subscribe(user=>{
+        console.log("request to update user reached");
+        this.currentUser = user;
+        // this.userCartProducts = user.products;
+        this.userEmail = user.email;
+        this.userRole = user.role;
+        this.wishList = user.wishList;
         if(user.role === "admin"){
           this.http.get(this.getAllUsersUrl).subscribe((res:any)=>{
             this.users = res;

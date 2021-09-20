@@ -8,9 +8,10 @@
 <div  *ngIf="showHome">
     <app-main></app-main>
 </div>
-<div  *ngIf="showCart">
+<div  *ngIf="showCart && currentUser.role === 'customer'">
     <!-- [userCartProducts]="userCartProducts" -->
-    <app-cart  [userEmail]="userEmail"></app-cart>
+    <h2 *ngIf="!loggedUser">Login to view your cart</h2>
+    <app-cart *ngIf="loggedUser" [userEmail]="userEmail"></app-cart>
 </div>
 <div *ngIf="showProducts">
     <app-product [userEmailForList]="userEmail" [userRole] ="userRole"></app-product>
