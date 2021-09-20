@@ -51,5 +51,12 @@ export class LogInComponent implements OnInit {
     this.showLoginView = false;
     this.signupView = true;
   }
+
+  recieveMessage($event: string){
+    if($event === "loginClicked"){
+      this.showLoginView = true;
+      this.signupView = false;
+    }
+  }
 }
 

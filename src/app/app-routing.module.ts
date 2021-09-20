@@ -20,7 +20,7 @@ const routes: Routes = [
   imports: [ RouterModule.forRoot(routes, {
     initialNavigation: 'enabled',
     paramsInheritanceStrategy: 'always'
-  }),
+}),
   ],
   exports: [RouterModule]
 })

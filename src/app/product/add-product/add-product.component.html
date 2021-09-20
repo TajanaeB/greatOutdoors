@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="productForm">
 <form #myForm="ngForm">
     <div class="FormGroup">
@@ -32,4 +32,47 @@
         <li  *ngFor="let data of returnData" style="list-style: none;">{{data.name}}</li>
     </ul>
 </form>
+</div> -->
+<div class="container">
+    <div class="FormGroup">
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <div class="card">
+                    <div class="sm-jumbotron center-align">
+                        <h2>Add Product</h2><br>
+                    </div>
+                    <form class="col s12 white"  #myForm="ngForm">
+                        <div class="row">
+                            <label for="productname">Name: </label>
+                            <input #fNameTemp="ngModel" type="text" name="productname" class="form-control" [(ngModel)]= "product.name">
+                        </div>
+                        <div class="row">
+                            <label for="price">Price: </label>
+                            <input type="number" name="Price" class="form-control" [(ngModel)]= "product.price">
+                        </div>
+                        <div class="row">
+                            <label for="proddescription">Description: </label>
+                            <input type="text" name="proddescription" class="form-control" [(ngModel)]= "product.description">
+                        </div>
+                        <div class="row">
+                            <label for="prodquantity">Quantity: </label>
+                            <input type="number" name="prodquantity" class="form-control" [(ngModel)]= "product.quantity">  
+                        </div>
+                        <div class="row">
+                            <label for="imageUrl">Image Url</label>
+                            <input type="text" name="imageUrl" class="form-control" [(ngModel)]= "product.imageUrl">
+                        </div>
+                        <div class="row">
+                            <label for="category">Category</label>
+                            <input type="text" name="category" class="form-control" [(ngModel)]= "product.category">
+                        </div>
+                        <div class="row">
+                            <button  class="btn btn-sm btn-primary" type="submit" (click)="addProduct()"> Add Product </button>
+                        </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
 </div>

@@ -28,7 +28,7 @@
                         <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit" (click)="addUser()">Submit</button>
                     </div>
                     <div class="input-field col s6"><br><br>
-                        <button type="submit" class="btn-large btn-submit" > Login </button>
+                        <button type="submit" class="btn-large btn-submit" (click)="sendLoginButtonClicked()"> Login </button>
                     </div>
                 </div>
             </form>

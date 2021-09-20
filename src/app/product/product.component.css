@@ -8,14 +8,12 @@
     width: 15%;
     float: left;
     padding: 20px;
-    border: 2px solid red;
 } 
 
 .float-side-child{
     width: 85%;
     float: left;
     padding: 20px;
-    border: 2px solid red;
 }
 
 .flex-container {

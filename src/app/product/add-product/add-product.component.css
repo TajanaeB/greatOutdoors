@@ -17,3 +17,27 @@
     border: 2px solid black;
     margin: 4px;
 }
+
+.signUpForm {
+    background-color: #df4f54;
+    
+}
+
+.sm-jumbotron {
+    background-color: #df4f54;
+    
+}
+
+.btn-large {
+    background-color: #df4f54;
+}
+
+.btn-submit{
+    background-color: #df4f54;
+}
+
+.card{
+    height: 700px;
+    width: 50%;
+    
+}

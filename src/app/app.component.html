@@ -1,16 +1,16 @@
 
 <div class="flex-container">
-    <app-header [userLoggedStatus] = "userLoggedInMessage" (messageEvent)="recieveMessage($event)"></app-header>
-</div>
-<div *ngIf="loggedUser">
-    <h2>Welcome {{currentUser.userName}}, Enjoy shopping with us </h2>
+    <app-header [currentUser]="currentUser" [userLoggedStatus] = "userLoggedInMessage" (messageEvent)="recieveMessage($event)"></app-header>
 </div>
 <div  *ngIf="showHome">
     <app-main></app-main>
 </div>
-<div  *ngIf="showCart && currentUser.role === 'customer'">
+<div  *ngIf="showCart && (currentUser.role != 'product master' && currentUser.role != 'admin')">
     <!-- [userCartProducts]="userCartProducts" -->
-    <h2 *ngIf="!loggedUser">Login to view your cart</h2>
+    <div class="container">
+        <h2 *ngIf="!loggedUser">Login to view your cart</h2>
+    </div>
+    
     <app-cart *ngIf="loggedUser" [userEmail]="userEmail"></app-cart>
 </div>
 <div *ngIf="showProducts">

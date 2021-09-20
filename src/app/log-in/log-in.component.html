@@ -34,6 +34,6 @@
 </div>
 </div>
 <div *ngIf="signupView">
-    <app-sign-up></app-sign-up>
+    <app-sign-up (showLoginEvent)="recieveMessage($event)"></app-sign-up>
 </div>
 

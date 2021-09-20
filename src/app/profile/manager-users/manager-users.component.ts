@@ -22,13 +22,13 @@ export class ManagerUsersComponent implements OnInit {
 
 
   assignUserToProductMaster(user: User){
-    user.role = "product master";
+    user.role = 'product master';
     this.http.put(this.putUrl, user).subscribe();
     
   }
 
   unassignUserFromProductMaster(user: User){
-    user.role = "customer";
+    user.role = 'customer';
     this.http.put(this.putUrl, user).subscribe();
   }
 

@@ -45,7 +45,7 @@ import { AddProductMasterComponent } from './profile/manager-users/add-product-m
 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     FormsModule,
     AppRoutingModule,

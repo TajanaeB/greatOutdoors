@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { User } from 'src/User';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
 
   @Output() messageEvent = new EventEmitter();
   @Input() userLoggedStatus: string = "";
+  @Input() currentUser = new User;
 
   constructor() { }
 

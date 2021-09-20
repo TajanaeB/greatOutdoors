@@ -1,20 +1,20 @@
-.nav {
-    justify-content: center;
-    background-color:red;
-    border: 2px solid black;
+.nav-item-welcome{
+    text-align: right;
     color: black;
+    font-size: large;
+    padding-right: 50px;
 }
 
-.header-link{
+.navbar-collapse{
+    padding-left: 40%;
+    
+}
+.nav-link{
     color: black;
+    font-size: large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 
-.logo{
 
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    margin-left: 220px;
-}
 
